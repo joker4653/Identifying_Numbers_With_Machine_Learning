@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 from torch import nn as nn
 from models.MLP import MLP
 from models.CNN import CNN
-from models.LTSM import LTSM
+from models.LTSM import LSTM
 
 train_data = datasets.MNIST(
     root = "data",
@@ -116,7 +116,7 @@ def trainCNN(epoch):
 
 def trainLTSM(epoch):
     """Function to train a Long Short-Term Memory (LSTM) model."""
-    model = LTSM().to(device)
+    model = LSTM().to(device)
 
     lossFunct = nn.CrossEntropyLoss()
 
